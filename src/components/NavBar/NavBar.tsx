@@ -7,7 +7,7 @@ import DepartmentsMenu from '../DepartmentsMenu/DepartmentsMenu';
 const NavBar = () => {
     if(!store.departments) return <p>Cargando...</p>;
 
-    return <nav>
+    return <nav className="nav-bar">
         <DepartmentsMenu />
     </nav>;
 }
