@@ -1,5 +1,5 @@
 
-import { depsArray, catsArray } from '../stores/stores';
+import { depsArray, catsArray, productsArray } from '../stores/stores';
 
 const apiRoot = 'https://backendapi.turing.com';
 
@@ -23,7 +23,18 @@ function getCategories(callback: (result: catsArray) => void){
         });
 }
 
+function getProducts(callback: (result: productsArray) => void){
+    fetch(`${apiRoot}/products`)
+        .then(( rawInfo ) => {
+            return rawInfo.json();
+        })
+        .then(( products ) => {
+            callback(products.rows);
+        });
+}
+
 export default {
     getDepartments,
-    getCategories
+    getCategories,
+    getProducts,
 };

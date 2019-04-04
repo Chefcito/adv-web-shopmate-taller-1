@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import NavBar from '../NavBar/NavBar';
 import Store from '../Store/Store';
 
@@ -23,6 +22,7 @@ class App extends Component {
         <h1>{ store.pageTitle }</h1>
       
         <NavBar />
+        <Store />
 
       </div>
     );

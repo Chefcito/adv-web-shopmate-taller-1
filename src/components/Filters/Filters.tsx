@@ -5,7 +5,6 @@ import DepartmentsMenu from '../DepartmentsMenu/DepartmentsMenu';
 
 @observer
 class Filters extends Component{
-
     constructor(props: {}){
         super(props);
 

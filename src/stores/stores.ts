@@ -4,6 +4,7 @@ import api from '../utils/api';
 
 export type depsArray = { name: string, department_id: number }[];
 export type catsArray = { name: string, category_id: number, department_id: number }[];
+export type productsArray = { name: string, description: string, product_id: number, price: number, discounted_price: number, thumbnail: string }[];
 
 class Store {
 
@@ -11,6 +12,8 @@ class Store {
     @observable loadingDeps: boolean = false;
 
     @observable categories: catsArray|null|false = null;
+
+    @observable products: productsArray|null|false = null;
 
     @observable currentDept: number|null = null;
     @observable currentCat: number|null = null;
@@ -61,6 +64,15 @@ class Store {
 
     @action setCategory(id: number){
         this.currentCat = id;
+    }
+
+    @action getProducts(){
+        if(this.products != null) return;
+
+        this.products = false;
+        api.getProducts((result: productsArray) => {
+            this.products = result;
+        });
     }
 }
 
