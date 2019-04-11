@@ -7,7 +7,7 @@ import Store from '../Store/Store';
 
 import store from '../../stores/stores';
 import Home from '../Home/Home';
-import ShopingCart from '../ShopingCart/ShopingCart';
+import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
 class App extends Component {
 
@@ -20,16 +20,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
-          
-        <Switch>
-          
-          
-        <Route path="/" component={Home} exact />
-        <Route path="/shoppingCart" component={ ShopingCart } exact />
-
-        </Switch>
-
+        <Router>          
+          <Switch>   
+            <Route path="/" component={ Home } exact />
+            <Route path="/shoppingCart" component={ ShoppingCart } exact />
+          </Switch>
         </Router>
       </div>
     );

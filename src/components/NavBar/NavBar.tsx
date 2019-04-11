@@ -10,8 +10,8 @@ const NavBar = () => {
 
     return <nav className="nav-bar">
     <   div className="nav-bar__main-logo">
-        <Link to="/">
-            <h2 className="nav-bar__main-logo__h2">SHOPMATE</h2></Link>
+        <Link className="nav-bar__main-logo__link" to="/">
+            <h2 className="nav-bar__main-logo__link__h2">SHOPMATE</h2></Link>
         </div>
 
         <DepartmentsMenu />

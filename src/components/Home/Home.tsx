@@ -17,7 +17,7 @@ import store from '../../stores/stores';
 
   render() {
     return (
-      <div className="Home">
+      <div className="home">
         {/* <h1>{ store.pageTitle }</h1> */}
 
         <NavBar />

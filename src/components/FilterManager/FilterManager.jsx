@@ -7,7 +7,7 @@ class FilterManager extends Component {
 
     render() {
         return <div className="filter-manager">
-            BEBESITA
+            Filter Manager
         </div>
     }
 }

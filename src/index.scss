@@ -13,6 +13,7 @@
 @import './components/Store/_store';
 @import './components/FilterManager/_filter-manager';
 @import './components/ProductCard/_product-card';
+@import './components/ShoppingCart/shoppingCart';
 
 #root {
     background-color: $gray-4;
