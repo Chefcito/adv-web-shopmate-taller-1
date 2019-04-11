@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import { observer } from 'mobx-react';
+
 import NavBar from '../NavBar/NavBar';
 import Store from '../Store/Store';
 
 import store from '../../stores/stores';
-import { observer } from 'mobx-react';
+import Home from '../Home/Home';
+import ShopingCart from '../ShopingCart/ShopingCart';
 
 class App extends Component {
 
@@ -16,12 +20,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <h1>{ store.pageTitle }</h1> */}
-        <NavBar />
-        <Store />
+        <Router>
+          
+        <Switch>
+          
+          
+        <Route path="/" component={Home} exact />
+        <Route path="/shoppingCart" component={ ShopingCart } exact />
 
-        <button>GO TO MY CART</ button>
+        </Switch>
 
+        </Router>
       </div>
     );
   }

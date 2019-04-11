@@ -3,13 +3,15 @@ import { observer } from 'mobx-react';
 
 import store from '../../stores/stores';
 import DepartmentsMenu from '../DepartmentsMenu/DepartmentsMenu';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     if(!store.departments) return <p>Cargando...</p>;
 
     return <nav className="nav-bar">
     <   div className="nav-bar__main-logo">
-            <h2 className="nav-bar__main-logo__h2">SHOPMATE</h2>
+        <Link to="/">
+            <h2 className="nav-bar__main-logo__h2">SHOPMATE</h2></Link>
         </div>
 
         <DepartmentsMenu />

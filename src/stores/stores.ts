@@ -6,6 +6,8 @@ export type depsArray = { name: string, department_id: number }[];
 export type catsArray = { name: string, category_id: number, department_id: number }[];
 export type productsArray = { name: string, description: string, product_id: number, price: number, discounted_price: number, thumbnail: string }[];
 
+type product = { name: string, description: string, product_id: number, price: number, discounted_price: number, thumbnail: string };
+
 class Store {
 
     @observable departments: depsArray|null = null;
@@ -14,6 +16,8 @@ class Store {
     @observable categories: catsArray|null|false = null;
 
     @observable products: productsArray|null|false = null;
+
+    @observable shoppingCart: productsArray|null = null;
 
     @observable currentDept: number|null = null;
     @observable currentCat: number|null = null;
@@ -73,6 +77,12 @@ class Store {
         api.getProducts((result: productsArray) => {
             this.products = result;
         });
+    }
+
+    @action setShoppingCartProduct(product: product) {
+        if(this.shoppingCart)
+        this.shoppingCart.push(product);
+        console.log(this.shoppingCart);
     }
 }
 
