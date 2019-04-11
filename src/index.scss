@@ -9,3 +9,11 @@
 
 // Components
 @import './components/NavBar/_nav-bar';
+@import './components/DepartmentsMenu/_departments-menu';
+@import './components/Store/_store';
+@import './components/FilterManager/_filter-manager';
+@import './components/ProductCard/_product-card';
+
+#root {
+    background-color: $gray-4;
+}

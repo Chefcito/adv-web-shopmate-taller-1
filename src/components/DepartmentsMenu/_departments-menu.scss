@@ -1,0 +1,16 @@
+.departments-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 30%;
+
+    button {
+        border: none;
+        background: none;
+        color: white;
+    }
+
+    button:focus-within {
+        outline: none;
+    }
+}

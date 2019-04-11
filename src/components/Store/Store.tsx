@@ -5,6 +5,8 @@ import store from '../../stores/stores';
 
 import Filters from '../Filters/Filters';
 import { privateEncrypt } from 'crypto';
+import ProductCard from '../ProductCard/ProductCard';
+import FilterManager from '../FilterManager/FilterManager';
 
 @observer
 class Store extends Component{
@@ -15,17 +17,22 @@ class Store extends Component{
     }   
 
     render(){
-        return <div>
-            <h1>Store page</h1>
-            <p>productos</p>
-            {store.products && store.products.map(( prod ) => {
-            return <div key={prod.product_id}>
-            <h2>{prod.name}</h2>
-            <img src={`https://backendapi.turing.com/images/products/${prod.thumbnail}`} alt=""/>
-            <p>{prod.description}</p>
-            <p>{prod.price}</p>
-            </div>;
-        })}
+        return <div className="store">
+            <div className="store__filter-manager">
+                <FilterManager />
+            </div>
+
+            <div className="store__catalog">
+                {store.products && store.products.map(( prod ) => {
+                    return <div className="store__catalog__product-card" key={prod.product_id}>
+                        <ProductCard
+                            image = {`https://backendapi.turing.com/images/products/${prod.thumbnail}`}
+                            name = {prod.name} 
+                            description = {prod.description}
+                            price = {prod.price}/>
+                    </div>;
+                })}   
+            </div>
         </div>
     }
 }

@@ -14,15 +14,13 @@ class App extends Component {
   }
 
   render() {
-    
-    
-
     return (
       <div className="App">
-        <h1>{ store.pageTitle }</h1>
-      
+        {/* <h1>{ store.pageTitle }</h1> */}
         <NavBar />
         <Store />
+
+        <button>GO TO MY CART</ button>
 
       </div>
     );

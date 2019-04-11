@@ -8,14 +8,14 @@ const DepartmentsMenu = () => {
         store.setDepartment(id);
     }
 
-    return <div>
+    return <div className='departments-menu'>
         {store.departments && store.departments.map(( dep ) => {
             return <button key={dep.department_id} 
                 onClick={() => {
                     handleClick(dep.department_id);
                 }}
                 style={{
-                    backgroundColor: store.currentDept === dep.department_id ? '#E0E0E0' : 'white',
+                    color: store.currentDept === dep.department_id ? '#F62F5E' : 'white',
                 }}
                 className={store.currentDept === dep.department_id ? 'active' : ''}>
                 {dep.name}
