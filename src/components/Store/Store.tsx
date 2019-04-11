@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
 import store from '../../stores/stores';
-import { product } from '../../stores/stores';
 
-import Filters from '../Filters/Filters';
-import { privateEncrypt } from 'crypto';
 import ProductCard from '../ProductCard/ProductCard';
 import FilterManager from '../FilterManager/FilterManager';
 
